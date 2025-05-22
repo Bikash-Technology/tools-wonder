@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiTools - 100+ Free Online Tools for Images, PDFs & More</title>
+    <meta name="description" content="Free online tools for images, PDFs, documents, and more. Convert, compress, edit and optimize files with our easy-to-use web tools.">
+    <meta name="keywords" content="image tools, PDF tools, online converters, file compressors, document tools, free web tools">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.png">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-weight: 300;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-btn {
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-weight: 500;
+            background-color: var(--accent-color);
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            height: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .tool-card {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .tool-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .tool-desc {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .feature-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .feature-card:hover {
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .feature-desc {
+            color: var(--gray-color);
+        }
+        
+        .popular-tools {
+            background-color: var(--light-color);
+            padding: 5rem 0;
+        }
+        
+        .ad-space {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+        
+        .footer-links h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .search-input, .search-btn {
+                padding: 12px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="MultiTools Logo">
+                MultiTools
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#all-tools">All Tools</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#image-tools"><i class="fas fa-image me-2"></i>Image Tools</a></li>
+                            <li><a class="dropdown-item" href="#pdf-tools"><i class="fas fa-file-pdf me-2"></i>PDF Tools</a></li>
+                            <li><a class="dropdown-item" href="#document-tools"><i class="fas fa-file-word me-2"></i>Document Tools</a></li>
+                            <li><a class="dropdown-item" href="#developer-tools"><i class="fas fa-code me-2"></i>Developer Tools</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-outline-primary">Premium Tools</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">100+ Free Online Tools</h1>
+            <p class="hero-subtitle">Convert, compress, edit and optimize your files with our easy-to-use web tools</p>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Search for tools...">
+                    <button class="btn search-btn" type="button">
+                        <i class="fas fa-search me-2"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Space -->
+    <div class="container">
+        <div class="ad-space">
+            <div>
+                <div class="ad-label">Advertisement</div>
+                <!-- Google AdSense Ad Unit -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                    crossorigin="anonymous"></script>
+                <!-- HomePage_Top -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                    data-ad-slot="YOUR_AD_SLOT_ID"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="container" id="all-tools">
+        <h2 class="section-title">Popular Categories</h2>
+        
+        <div class="row">
+            <!-- Image Tools Category -->
+            <div class="col-md-6 col-lg-3" id="image-tools">
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3 class="category-title">Image Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-compress-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">Image Compressor</h4>
+                                    <p class="tool-desc">Reduce image size without losing quality</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">Image Converter</h4>
+                                    <p class="tool-desc">Convert between JPG, PNG, GIF, WebP</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-crop"></i>
+                                    </div>
+                                    <h4 class="tool-name">Image Cropper</h4>
+                                    <p class="tool-desc">Crop images to any size or aspect ratio</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon">
+                                        <i class="fas fa-qrcode"></i>
+                                    </div>
+                                    <h4 class="tool-name">QR Generator</h4>
+                                    <p class="tool-desc">Create custom QR codes for any URL</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tools/image-tools.html" class="btn btn-outline-primary w-100 mt-2">View All Image Tools</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PDF Tools Category -->
+            <div class="col-md-6 col-lg-3" id="pdf-tools">
+                <div class="category-card">
+                    <div class="category-header" style="background-color: #e63946;">
+                        <div class="category-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 class="category-title">PDF Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #e63946;">
+                                        <i class="fas fa-compress-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">PDF Compressor</h4>
+                                    <p class="tool-desc">Reduce PDF file size while keeping quality</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #e63946;">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">PDF Converter</h4>
+                                    <p class="tool-desc">Convert to/from Word, Excel, JPG, etc.</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #e63946;">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <h4 class="tool-name">PDF Protector</h4>
+                                    <p class="tool-desc">Add passwords to secure your PDFs</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #e63946;">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <h4 class="tool-name">PDF Editor</h4>
+                                    <p class="tool-desc">Edit text and images in PDF files</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tools/pdf-tools.html" class="btn btn-outline-danger w-100 mt-2">View All PDF Tools</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Document Tools Category -->
+            <div class="col-md-6 col-lg-3" id="document-tools">
+                <div class="category-card">
+                    <div class="category-header" style="background-color: #2a9d8f;">
+                        <div class="category-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h3 class="category-title">Document Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #2a9d8f;">
+                                        <i class="fas fa-file-word"></i>
+                                    </div>
+                                    <h4 class="tool-name">Word to PDF</h4>
+                                    <p class="tool-desc">Convert DOC/DOCX to PDF format</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #2a9d8f;">
+                                        <i class="fas fa-file-excel"></i>
+                                    </div>
+                                    <h4 class="tool-name">Excel to PDF</h4>
+                                    <p class="tool-desc">Convert XLS/XLSX to PDF format</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #2a9d8f;">
+                                        <i class="fas fa-file-powerpoint"></i>
+                                    </div>
+                                    <h4 class="tool-name">PPT to PDF</h4>
+                                    <p class="tool-desc">Convert PowerPoint to PDF format</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #2a9d8f;">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">Text Tools</h4>
+                                    <p class="tool-desc">Count words, convert case, and more</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tools/document-tools.html" class="btn btn-outline-success w-100 mt-2">View All Document Tools</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Developer Tools Category -->
+            <div class="col-md-6 col-lg-3" id="developer-tools">
+                <div class="category-card">
+                    <div class="category-header" style="background-color: #f4a261;">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="category-title">Developer Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #f4a261;">
+                                        <i class="fas fa-file-code"></i>
+                                    </div>
+                                    <h4 class="tool-name">HTML Formatter</h4>
+                                    <p class="tool-desc">Beautify and minify HTML code</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #f4a261;">
+                                        <i class="fab fa-css3-alt"></i>
+                                    </div>
+                                    <h4 class="tool-name">CSS Minifier</h4>
+                                    <p class="tool-desc">Compress CSS files for production</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #f4a261;">
+                                        <i class="fab fa-js"></i>
+                                    </div>
+                                    <h4 class="tool-name">JS Validator</h4>
+                                    <p class="tool-desc">Validate and format JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="tool-card">
+                                    <div class="tool-icon" style="color: #f4a261;">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <h4 class="tool-name">Base64 Encode</h4>
+                                    <p class="tool-desc">Encode/decode Base64 strings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tools/developer-tools.html" class="btn btn-outline-warning w-100 mt-2">View All Developer Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="feature-section" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Why Choose MultiTools?</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Fast Processing</h3>
+                        <p class="feature-desc">Our tools work directly in your browser for instant results without waiting for server processing.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="feature-title">Privacy Focused</h3>
+                        <p class="feature-desc">Your files never leave your computer. All processing happens locally in your browser.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Mobile Friendly</h3>
+                        <p class="feature-desc">Works perfectly on all devices - desktop, tablet, and mobile phones.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="feature-title">100% Free</h3>
+                        <p class="feature-desc">All our tools are completely free to use with no hidden charges or watermarks.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">No Registration</h3>
+                        <p class="feature-desc">Use all tools without signing up or providing any personal information.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="feature-title">Wide Variety</h3>
+                        <p class="feature-desc">Over 100 tools covering images, PDFs, documents, development, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tools Section -->
+    <section class="popular-tools">
+        <div class="container">
+            <h2 class="section-title">Most Popular Tools</h2>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h4 class="tool-name">Image Compressor</h4>
+                        <p class="tool-desc">Reduce image size without losing quality</p>
+                        <a href="tools/image-tools/image-compressor.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h4 class="tool-name">PDF to Word</h4>
+                        <p class="tool-desc">Convert PDF files to editable Word documents</p>
+                        <a href="tools/pdf-tools/pdf-to-word.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h4 class="tool-name">QR Generator</h4>
+                        <p class="tool-desc">Create custom QR codes for any URL</p>
+                        <a href="tools/image-tools/qr-generator.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h4 class="tool-name">Word to PDF</h4>
+                        <p class="tool-desc">Convert DOC/DOCX files to PDF format</p>
+                        <a href="tools/document-tools/word-to-pdf.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h4 class="tool-name">PDF Compressor</h4>
+                        <p class="tool-desc">Reduce PDF file size while keeping quality</p>
+                        <a href="tools/pdf-tools/pdf-compressor.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4 class="tool-name">Image Converter</h4>
+                        <p class="tool-desc">Convert between JPG, PNG, GIF, WebP</p>
+                        <a href="tools/image-tools/image-converter.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h4 class="tool-name">Excel to PDF</h4>
+                        <p class="tool-desc">Convert XLS/XLSX files to PDF format</p>
+                        <a href="tools/document-tools/excel-to-pdf.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="tool-card text-center">
+                        <div class="tool-icon mx-auto">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h4 class="tool-name">HTML Formatter</h4>
+                        <p class="tool-desc">Beautify and minify HTML code</p>
+                        <a href="tools/developer-tools/html-formatter.html" class="btn btn-sm btn-primary">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#all-tools" class="btn btn-primary">View All Tools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Space -->
+    <div class="container">
+        <div class="ad-space">
+            <div>
+                <div class="ad-label">Advertisement</div>
+                <!-- Google AdSense Ad Unit -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                    crossorigin="anonymous"></script>
+                <!-- HomePage_Bottom -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                    data-ad-slot="YOUR_AD_SLOT_ID"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="mb-4">
+                        <img src="assets/images/logo-white.png" alt="MultiTools Logo" height="40" class="me-2">
+                        MultiTools
+                    </h3>
+                    <p>Your one-stop destination for free online tools. We offer 100+ tools to make your work easier, faster, and more efficient.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-links">Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#all-tools">All Tools</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-links">Categories</h5>
+                    <ul>
+                        <li><a href="#image-tools">Image Tools</a></li>
+                        <li><a href="#pdf-tools">PDF Tools</a></li>
+                        <li><a href="#document-tools">Document Tools</a></li>
+                        <li><a href="#developer-tools">Developer Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-links">Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">DMCA</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-12">
+                    <h5 class="footer-links">Contact</h5>
+                    <ul>
+                        <li><a href="mailto:contact@multitools.com">contact@multitools.com</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Report a Bug</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright text-center">
+                <p>© 2023 MultiTools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Main JS -->
+    <script>
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            searchBtn.addEventListener('click', function() {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    alert('Search functionality will be implemented to show tools related to: ' + searchTerm);
+                    // In actual implementation, this would filter tools
+                }
+            });
+            
+            // Allow search on Enter key
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+            
+            // Tooltip initialization
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MultiTools",
+        "url": "https://yourdomain.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yourdomain.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</body>
+</html>
